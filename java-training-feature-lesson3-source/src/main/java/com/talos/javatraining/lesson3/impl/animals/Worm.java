@@ -1,13 +1,14 @@
 package com.talos.javatraining.lesson3.impl.animals;
 
 import com.talos.javatraining.lesson3.AnimalSupport;
+import com.talos.javatraining.lesson3.groupInterfaces.Invertebrate;
 import com.talos.javatraining.lesson3.impl.AbstractAnimal;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Worm extends AbstractAnimal
+public class Worm extends AbstractAnimal implements Invertebrate
 {
 	@Override
 	public List<String> getCharacteristics()
@@ -15,5 +16,15 @@ public class Worm extends AbstractAnimal
 		List<String> characteristics = new ArrayList<>(AnimalSupport.getInvertebrateCharacteristics());
 		characteristics.add("They are bilaterally symmetrical");
 		return characteristics;
+	}
+
+	@Override
+	public String getName() {
+		return null;
+	}
+
+	@Override
+	public String getFullDescription() {
+		return null;
 	}
 }
