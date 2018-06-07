@@ -1,7 +1,6 @@
 package com.talos.javatraining.lesson3.impl.animals;
 
-import com.talos.javatraining.lesson3.AnimalSupport;
-import com.talos.javatraining.lesson3.groupInterfaces.Amphibian;
+import com.talos.javatraining.lesson3.Amphibian;
 import com.talos.javatraining.lesson3.impl.AbstractAnimal;
 
 import java.util.ArrayList;
@@ -10,21 +9,16 @@ import java.util.List;
 
 public class Frog extends AbstractAnimal implements Amphibian
 {
+
 	@Override
-	public List<String> getCharacteristics()
-	{
-		List<String> characteristics = new ArrayList<>(AnimalSupport.getAmphibianCharacteristics());
+	public List<String> getParentCharacteristics() {
+		List<String> characteristics = new ArrayList<>(Amphibian.super.getCharacteristics());
 		characteristics.add("They croak");
 		return characteristics;
 	}
 
 	@Override
-	public String getName() {
-		return null;
-	}
+	public void populateCharacteristics(List<String> characteristics) {
 
-	@Override
-	public String getFullDescription() {
-		return null;
 	}
 }
