@@ -8,8 +8,10 @@ import static java.util.Arrays.asList;
 
 public interface JawlessFish extends Fish {
 
-    default List<String> getJawlessFishCharacteristics()
+    default List<String> getCharacteristics()
     {
-        return asList("They don't have jaw");
+        List<String> characteristics = Fish.super.getCharacteristics();
+        characteristics.add("They don't have jaw");
+        return characteristics;
     }
 }

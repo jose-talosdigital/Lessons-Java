@@ -13,14 +13,13 @@ public class Lamprey extends AbstractAnimal implements JawlessFish
 
 	@Override
 	public List<String> getParentCharacteristics() {
-		List<String> characteristics = new ArrayList<>(getJawlessFishCharacteristics());
-		characteristics.addAll(JawlessFish.super.getCharacteristics());
-		characteristics.addAll(Arrays.asList("They have a sucker mouth with horny teeth and a rasping tongue"));
+		List<String> characteristics = new ArrayList<>(JawlessFish.super.getCharacteristics());
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They have a sucker mouth with horny teeth and a rasping tongue");
 	}
 }

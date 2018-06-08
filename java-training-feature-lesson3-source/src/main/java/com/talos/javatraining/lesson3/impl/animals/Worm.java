@@ -13,12 +13,11 @@ public class Worm extends AbstractAnimal implements Invertebrate
 	@Override
 	public List<String> getParentCharacteristics() {
 		List<String> characteristics = new ArrayList<>(Invertebrate.super.getCharacteristics());
-		characteristics.add("They are bilaterally symmetrical");
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They are bilaterally symmetrical");
 	}
 }

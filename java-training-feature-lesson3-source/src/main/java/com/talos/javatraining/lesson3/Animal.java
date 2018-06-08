@@ -40,7 +40,6 @@ public interface Animal
             if(clazz == null){return null;}
             return (Animal) clazz.getDeclaredConstructor().newInstance();
         } catch (InvocationTargetException | ClassNotFoundException | ClassCastException e) {
-            e.printStackTrace();
             return null;
         }
     }

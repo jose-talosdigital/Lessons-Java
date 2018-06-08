@@ -13,12 +13,12 @@ public class Dog extends AbstractAnimal implements Mammal
 	@Override
 	public List<String> getParentCharacteristics() {
 		List<String> characteristics = new ArrayList<>(Mammal.super.getCharacteristics());
-		characteristics.add("They bark");
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They bark");
 	}
 }

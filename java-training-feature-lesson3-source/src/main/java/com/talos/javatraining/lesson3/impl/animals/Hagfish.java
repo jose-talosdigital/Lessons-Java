@@ -13,14 +13,13 @@ public class Hagfish extends AbstractAnimal implements JawlessFish
 
 	@Override
 	public List<String> getParentCharacteristics() {
-		List<String> characteristics = new ArrayList<>(getJawlessFishCharacteristics());
-		characteristics.addAll(JawlessFish.super.getCharacteristics());
-		characteristics.add("They are living fossils");
+		List<String> characteristics = new ArrayList<>(JawlessFish.super.getCharacteristics());
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They are living fossils");
 	}
 }

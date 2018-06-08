@@ -13,12 +13,12 @@ public class Frog extends AbstractAnimal implements Amphibian
 	@Override
 	public List<String> getParentCharacteristics() {
 		List<String> characteristics = new ArrayList<>(Amphibian.super.getCharacteristics());
-		characteristics.add("They croak");
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They croak");
 	}
 }

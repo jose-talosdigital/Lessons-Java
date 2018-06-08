@@ -13,12 +13,12 @@ public class Human extends AbstractAnimal implements Mammal
 	@Override
 	public List<String> getParentCharacteristics() {
 		List<String> characteristics = new ArrayList<>(Mammal.super.getCharacteristics());
-        characteristics.add("They rule the word!");
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They rule the word!");
 	}
 }

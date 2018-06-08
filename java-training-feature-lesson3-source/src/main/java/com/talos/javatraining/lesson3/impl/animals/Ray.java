@@ -13,14 +13,12 @@ public class Ray extends AbstractAnimal implements CartilaginousFish
 
 	@Override
 	public List<String> getParentCharacteristics() {
-		List<String> characteristics = new ArrayList<>(getCartilaginousFishCharacteristics());
-		characteristics.addAll(CartilaginousFish.super.getCharacteristics());
-		characteristics.addAll(Arrays.asList("They are flattened", "They have five gill openings"));
+		List<String> characteristics = new ArrayList<>(CartilaginousFish.super.getCharacteristics());
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.addAll(Arrays.asList("They are flattened", "They have five gill openings"));
 	}
 }

@@ -13,12 +13,12 @@ public class Hen extends AbstractAnimal implements Bird
 	@Override
 	public List<String> getParentCharacteristics() {
 		List<String> characteristics = new ArrayList<>(Bird.super.getCharacteristics());
-		characteristics.add("They don't fly");
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They don't fly");
 	}
 }

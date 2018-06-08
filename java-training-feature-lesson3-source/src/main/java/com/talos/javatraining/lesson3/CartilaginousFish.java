@@ -6,8 +6,10 @@ import static java.util.Arrays.asList;
 
 public interface CartilaginousFish extends Fish {
 
-    default List<String> getCartilaginousFishCharacteristics()
+    default List<String> getCharacteristics()
     {
-        return asList("They have skeleton made of cartilage rather than bone");
+        List<String> characteristics = Fish.super.getCharacteristics();
+        characteristics.add("They have skeleton made of cartilage rather than bone");
+        return characteristics;
     }
 }

@@ -9,16 +9,14 @@ import java.util.List;
 
 public class Shark extends AbstractAnimal implements CartilaginousFish
 {
-
+	@Override
 	public List<String> getParentCharacteristics() {
-		List<String> characteristics = new ArrayList<>(getCartilaginousFishCharacteristics());
-		characteristics.addAll(CartilaginousFish.super.getCharacteristics());
-		characteristics.add("Highly developed senses");
+		List<String> characteristics = new ArrayList<>(CartilaginousFish.super.getCharacteristics());
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("Highly developed senses");
 	}
 }

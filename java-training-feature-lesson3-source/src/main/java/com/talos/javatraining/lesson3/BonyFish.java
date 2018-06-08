@@ -5,8 +5,10 @@ import java.util.List;
 import static java.util.Arrays.asList;
 
 public interface BonyFish extends Fish {
-    default List<String> getBonyFishCharacteristics()
+    default List<String> getCharacteristics()
     {
-        return asList("They have skeletons primarily composed of bone tissue");
+        List<String> characteristics = Fish.super.getCharacteristics();
+        characteristics.add("They have skeletons primarily composed of bone tissue");
+        return characteristics;
     }
 }

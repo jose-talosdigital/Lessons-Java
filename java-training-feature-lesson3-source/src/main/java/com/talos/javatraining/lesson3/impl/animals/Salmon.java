@@ -12,14 +12,13 @@ public class Salmon extends AbstractAnimal implements BonyFish
 
 	@Override
 	public List<String> getParentCharacteristics() {
-		List<String> characteristics = new ArrayList<>(getBonyFishCharacteristics());
-		characteristics.addAll(BonyFish.super.getCharacteristics());
-		characteristics.add("They are anadromous fish");
+		List<String> characteristics = new ArrayList<>(BonyFish.super.getCharacteristics());
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They are anadromous fish");
 	}
 }

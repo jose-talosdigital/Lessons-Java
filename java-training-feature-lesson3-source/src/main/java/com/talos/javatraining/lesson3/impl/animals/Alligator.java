@@ -13,12 +13,12 @@ public class Alligator extends AbstractAnimal implements Reptile
 	@Override
 	public List<String> getParentCharacteristics() {
 		List<String> characteristics = new ArrayList<>(Reptile.super.getCharacteristics());
-		characteristics.add("They have U-shaped snouts");
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They have U-shaped snouts");
 	}
 }

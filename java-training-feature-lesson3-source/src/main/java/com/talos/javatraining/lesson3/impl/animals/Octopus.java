@@ -13,12 +13,12 @@ public class Octopus extends AbstractAnimal implements Invertebrate
 	@Override
 	public List<String> getParentCharacteristics() {
 		List<String> characteristics = new ArrayList<>(Invertebrate.super.getCharacteristics());
-		characteristics.add("They have eight legs");
+
 		return characteristics;
 	}
 
 	@Override
 	public void populateCharacteristics(List<String> characteristics) {
-
+		characteristics.add("They have eight legs");
 	}
 }
