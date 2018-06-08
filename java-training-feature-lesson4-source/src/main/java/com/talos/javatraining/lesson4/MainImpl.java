@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 
@@ -20,37 +21,40 @@ public class MainImpl implements Main
 	@Override
 	public String getLine1(AddressModel addressModel)
 	{
-		String result = StringUtils.EMPTY;
-		if (addressModel != null)
-		{
-			if (StringUtils.isNotBlank(addressModel.getLine1()))
-			{
-				result = addressModel.getLine1();
-			}
-		}
-		return result;
+		return Optional.ofNullable(addressModel)
+				.map(AddressModel::getLine1)
+				.filter(StringUtils::isNotBlank)
+				.orElse("");
+
 	}
 
 	@Override
 	public String getFullName(AddressModel addressModel)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
-		if (addressModel != null)
-		{
-			if (StringUtils.isNotBlank(addressModel.getFirstName()))
-			{
-				stringBuilder.append(addressModel.getFirstName());
-			}
-			if (StringUtils.isNotBlank(addressModel.getLastName()))
-			{
-				if (stringBuilder.length() != 0)
-				{
-					stringBuilder.append(StringUtils.SPACE);
-				}
-				stringBuilder.append(addressModel.getLastName());
-			}
-		}
+
+		Optional.ofNullable(addressModel)
+				.map(AddressModel::getFirstName)
+				.filter(StringUtils::isNotBlank)
+				.ifPresent(firstname->{
+					stringBuilder.append(firstname);
+					Optional.of(addressModel)
+							.map(AddressModel::getLastName)
+							.filter(StringUtils::isNotBlank)
+							.ifPresent(lastname->{
+								stringBuilder.append(StringUtils.SPACE);});
+				});
+
+		Optional.ofNullable(addressModel)
+				.map(AddressModel::getLastName)
+				.filter(StringUtils::isNotBlank)
+				.ifPresent(stringBuilder::append);
+
+
+
+
 		return stringBuilder.toString();
+
 	}
 
 	@Override
