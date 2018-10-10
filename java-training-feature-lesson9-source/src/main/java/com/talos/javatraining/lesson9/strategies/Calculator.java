@@ -57,9 +57,9 @@ public class Calculator
 	}
 
 	@Inject
-	public void setStrategies(Set<CalculatorStrategy> strategySet)
+	public void setStrategies(Map<String, CalculatorStrategy> strategyMap)
 	{
-		strategies = strategySet.stream().collect(Collectors.toMap(this::getKey, s -> s));
+		strategies = strategyMap;
 	}
 
 

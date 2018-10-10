@@ -5,11 +5,17 @@ import com.talos.javatraining.lesson9.strategies.ProcessCalculation;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.function.Function;
 
 
-public abstract class CalculatorTemplate implements CalculatorStrategy
+public class CalculatorTemplate implements CalculatorStrategy
 {
 	private static final MathContext CONTEXT = MathContext.DECIMAL128;
+	private Function<BigDecimal, String> strategy;
+
+	public CalculatorTemplate (Function<BigDecimal, String> strategy){
+		this.strategy = strategy;
+	}
 
 	@Override
 	public String add(String a, String b)
@@ -35,7 +41,9 @@ public abstract class CalculatorTemplate implements CalculatorStrategy
 		return process(a, b, BigDecimal::divide);
 	}
 
-	protected abstract String convertToString(BigDecimal value);
+	protected String convertToString(BigDecimal value){
+		return this.strategy.apply(value);
+	};
 
 	private String process(String a, String b, ProcessCalculation operation)
 	{
